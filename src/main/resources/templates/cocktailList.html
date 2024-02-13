@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table>
+    <thead><tr>
+        <th>Cocktails</th>
+    </tr></thead>
+    <tbody>
+    <tr th:each="cocktail : ${cocktailList}">
+        <td>
+            <a th:href="@{/cocktails/{cocktailName}(cocktailName=${cocktail.name})}" th:text="${cocktail.name}">Cocktail Name</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
